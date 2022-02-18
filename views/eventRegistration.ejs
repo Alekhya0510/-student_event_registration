@@ -1,0 +1,45 @@
+<%- include ('partials/header') %>
+<div class="ui inverted container">
+	
+<div class="ui form" style="margin-top:80px;">
+	<h4 class="ui center aligned dividing huge header">Event Registration</h4>
+<div class="field">
+
+<div style="width:30% ;margin:25px auto">
+<form action="/regs" method="POST">
+
+<div class="field"><input  type="text"
+name="Reg[name]" id="name" placeholder="Name" required></div>
+
+<div class="field"><input  type="text"
+name="Reg[reg]" id="reg" placeholder="Reg No" required></div>
+
+<div class="field"><input  type="text"
+    name="Reg[branch]" id="branch" placeholder="Branch" required></div>
+
+<div class="field"><input  type="text"
+    name="Reg[year]" id="year" placeholder="Current year 1/2/3/4" required></div>
+
+    <div class="field"><input  type="text"
+        name="Reg[event]" id="event" placeholder="Event name" required></div>
+
+        <div class="field"><input  type="text"
+            name="Reg[venue]" id="venue" placeholder="Venue" required></div>
+
+            <div class="field"><input  type="text"
+                name="Reg[datefrom]" id="datefrom" placeholder="From Date" required></div>
+
+                <div class="field"><input  type="text"
+                    name="Reg[dateto]" id="dateto" placeholder="To Date" required></div>
+
+	<div class="ui center aligned container">
+		<div class="field"><button class="ui green basic button ">Create</button></div> </div>
+	</div>
+
+	
+	</form>
+	</div>
+	</div>
+	</div>
+</div>
+<%- include ('partials/footer') %>

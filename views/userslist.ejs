@@ -1,0 +1,178 @@
+<%- include ('partials/header') %>
+      
+<div class="ui container" style="margin-top: 6em">
+	<div class="text-center">
+	  <div class="page-header">
+    <h1>Student Details</h1>
+  </div>
+	 </div>
+
+<table class="ui blue celled table" id="styledTable">
+  <thead>
+      	<tr>
+          <th>Name  </th>
+          <th>Reg no</th>
+          <th>Branch</th>
+          <th>year</th>
+          <th>Event</th>
+          <th>Venue</th>
+          <th>From Date</th>
+          <th>To Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+      	<%  user.forEach(function(User){ %>
+         
+          <% if(User.branch==="CSE") { %>
+        </tr>
+        <tr>
+      
+        <td><%=User.name %></td>
+        <td><%=User.reg %></td>
+        <td><%=User.branch %></td>
+        <td><%=User.year %></td>
+        <td><%=User.event %></td>
+        <td><%=User.venue %></td>
+        <td><%=User.datefrom %></td>
+        <td><%=User.dateto %></td>
+        <td>
+          <form action="/userslist/<%= User._id %>?_method=DELETE" method="POST" style="display: inline">
+      <button  class="ui red basic button">
+        Delete
+      </button>
+    </form>
+  </td>
+     	<% }}) %> 
+       <%  user.forEach(function(User){ %>
+         
+        <% if(User.branch==="IT") { %>
+      </tr>
+      <tr>
+    
+      <td><%=User.name %></td>
+      <td><%=User.reg %></td>
+      <td><%=User.branch %></td>
+      <td><%=User.year %></td>
+      <td><%=User.event %></td>
+      <td><%=User.venue %></td>
+      <td><%=User.datefrom %></td>
+      <td><%=User.dateto %></td>
+      <td>
+        <form action="/userslist/<%= User._id %>?_method=DELETE" method="POST" style="display: inline">
+    <button  class="ui red basic button">
+      Delete
+    </button>
+  </form>
+</td>
+     <% }}) %>   
+     <%  user.forEach(function(User){ %>
+         
+      <% if(User.branch==="ECE") { %>
+    </tr>
+    <tr>
+  
+    <td><%=User.name %></td>
+    <td><%=User.reg %></td>
+    <td><%=User.branch %></td>
+    <td><%=User.year %></td>
+    <td><%=User.event %></td>
+    <td><%=User.venue %></td>
+    <td><%=User.datefrom %></td>
+    <td><%=User.dateto %></td>
+    <td>
+      <form action="/userslist/<%= User._id %>?_method=DELETE" method="POST" style="display: inline">
+  <button  class="ui red basic button">
+    Delete
+  </button>
+</form>
+</td>
+   <% }}) %> 
+   <%  user.forEach(function(User){ %>
+         
+    <% if(User.branch==="EEE") { %>
+  </tr>
+  <tr>
+
+  <td><%=User.name %></td>
+  <td><%=User.reg %></td>
+  <td><%=User.branch %></td>
+  <td><%=User.year %></td>
+  <td><%=User.event %></td>
+  <td><%=User.venue %></td>
+  <td><%=User.datefrom %></td>
+  <td><%=User.dateto %></td>
+  <td>
+    <form action="/userslist/<%= User._id %>?_method=DELETE" method="POST" style="display: inline">
+<button  class="ui red basic button">
+  Delete
+</button>
+</form>
+</td>
+ <% }}) %> 
+ <%  user.forEach(function(User){ %>
+         
+  <% if(User.branch==="MEC") { %>
+</tr>
+<tr>
+
+<td><%=User.name %></td>
+<td><%=User.reg %></td>
+<td><%=User.branch %></td>
+<td><%=User.year %></td>
+<td><%=User.event %></td>
+<td><%=User.venue %></td>
+<td><%=User.datefrom %></td>
+<td><%=User.dateto %></td>
+<td>
+  <form action="/userslist/<%= User._id %>?_method=DELETE" method="POST" style="display: inline">
+<button  class="ui red basic button">
+Delete
+</button>
+</form>
+</td>
+<% }}) %> 
+<%  user.forEach(function(User){ %>
+         
+  <% if(User.branch==="CE") { %>
+</tr>
+<tr>
+
+<td><%=User.name %></td>
+<td><%=User.reg %></td>
+<td><%=User.branch %></td>
+<td><%=User.year %></td>
+<td><%=User.event %></td>
+<td><%=User.venue %></td>
+<td><%=User.datefrom %></td>
+<td><%=User.dateto %></td>
+<td>
+  <form action="/userslist/<%= User._id %>?_method=DELETE" method="POST" style="display: inline">
+<button  class="ui red basic button">
+Delete
+</button>
+</form>
+</td>
+<% }}) %> 
+     </tr>
+   </tbody>
+   </table>
+
+  <div class="ui center aligned container">
+    <button class="ui teal basic button" id="jsPDF">Download Pdf</button>
+</div>
+<br>
+<div class="ui center aligned container">
+  <button class="ui teal basic button"><a href="/">Logout</a></button>
+</div>
+	<script>
+		function downloadPDFWithBrowserPrint() {
+			window.print();
+		}
+		document.querySelector('#jsPDF').addEventListener('click', downloadPDFWithBrowserPrint);
+	</script>
+
+
+
+
+<%- include ('partials/footer') %>
